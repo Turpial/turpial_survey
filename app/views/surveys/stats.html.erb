@@ -1,0 +1,86 @@
+<h2>People that </h2>
+<% @use_turpial.each do  |ut|%>
+  <h3><%=  (ut.use_turpial ? 'Use: ': 'Dont use: ').concat ut.total.to_s %></h3>
+<% end %>
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+<script>
+
+$(document).ready(function() {
+  chart_os = new Highcharts.Chart({
+      chart: {
+          renderTo: 'operating_systems',
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false
+      },
+      title: {
+          text: 'Operating systems'
+      },
+      tooltip: {
+          pointFormat: '{series.name}: <b>{point.percentage}%</b>',
+          percentageDecimals: 0
+      },
+      plotOptions: {
+          pie: {
+              allowPointSelect: true,
+              cursor: 'pointer',
+              dataLabels: {
+                  enabled: true,
+                  color: '#000000',
+                  connectorColor: '#000000',
+                  formatter: function() {
+                      return '<b>'+ this.point.name +'</b>: '+ this.percentage +' %';
+                  }
+              }
+          }
+      },
+      series: [{
+          type: 'pie',
+          name: 'Operating system share',
+          data: <%= raw @operating_systems.collect { |os| [os.operating_system.capitalize, os.total] } %>
+      }]
+  });
+
+  chart_mac= new Highcharts.Chart({
+      chart: {
+          renderTo: 'want_mac',
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false
+      },
+      title: {
+          text: 'About Turpial in mac'
+      },
+      tooltip: {
+          pointFormat: '{series.name}: <b>{point.percentage}%</b>',
+          percentageDecimals: 1
+      },
+      plotOptions: {
+          pie: {
+              allowPointSelect: true,
+              cursor: 'pointer',
+              dataLabels: {
+                  enabled: true,
+                  color: '#000000',
+                  connectorColor: '#000000',
+                  formatter: function() {
+                      return '<b>'+ this.point.name +'</b>: '+ this.percentage +' %';
+                  }
+              }
+          }
+      },
+      series: [{
+          type: 'pie',
+          name: 'Turpial in mac',
+          data: <%= raw @want_mac.collect { |wm| [(wm.want_mac == 0 ? 'No' : wm.want_mac == 1 ? 'Yes' : 'Dont care'), wm.total] } %>
+      }]
+  });
+});
+
+</script>
+
+<div id='operating_systems' style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+<div id='want_mac' style="min-width: 400px; height: 400px; margin: 0 auto"></div>

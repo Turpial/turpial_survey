@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  use_turpial: false
+  operating_system: MyString
+  want_mac: 
+  why_not: MyString
+
+two:
+  use_turpial: false
+  operating_system: MyString
+  want_mac: 
+  why_not: MyString

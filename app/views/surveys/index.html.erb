@@ -1,0 +1,29 @@
+<h1><%= I18n.t 'survey_title' %></h1>
+
+<table>
+  <tr>
+    <th>Use turpial</th>
+    <th>Operating system</th>
+    <th>Want mac</th>
+    <th>Why not</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @surveys.each do |survey| %>
+  <tr>
+    <td><%= survey.use_turpial %></td>
+    <td><%= survey.operating_system %></td>
+    <td><%= survey.want_mac %></td>
+    <td><%= survey.why_not %></td>
+    <td><%= link_to 'Show', survey %></td>
+    <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
+    <td><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Survey', new_survey_path %>

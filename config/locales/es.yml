@@ -1,0 +1,15 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+es:
+  survey_title: "La encuesta de turpial"
+  submit: 'Enviar'
+  questions:
+    use_turpial: "Usas Turpial?"
+    why_not: "Por qué no usas Turpial?"
+    operating_system: "Sistema Operativo?"
+    want_mac: "Quieres usar Turpial en mac?"
+  options:
+    _yes: "Sí"
+    _no: "No"
+    not_interested: "No me interesa"

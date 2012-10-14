@@ -1,0 +1,43 @@
+<%= form_for(@survey) do |f| %>
+  <% if @survey.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
+
+      <ul>
+      <% @survey.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label I18n.t 'questions.use_turpial' %><br />
+    <%= f.radio_button :use_turpial, true %>
+    <%= label_tag(:use_yes, I18n.t('options._yes')) %>
+    <%= f.radio_button :use_turpial, false %>
+    <%= label_tag(:use_no, I18n.t('options._no')) %>
+  </div>
+  <div class="field" id="why_not">
+    <%= f.label I18n.t 'questions.why_not' %><br />
+    <%= f.text_area :why_not %>
+  </div>
+  <div class="field" id="os_field" >
+    <%= f.label I18n.t 'questions.operating_system' %><br />
+    <%= f.select(:operating_system, options_for_select([['Debian','debian'], ['Ubuntu','ubuntu'],['Fedora','fedora'], ['OpenSuse','opensuse'], ['Linux Mint','linux mint'], ['Arch','arch'], ['Other', 'other']])) %>
+  </div>
+  <div class="field">
+    <%= f.label I18n.t 'questions.want_mac' %><br />
+    <%= f.radio_button :want_mac, 1  %>
+    <%= label_tag(:want_yes, I18n.t('options._yes')) %>
+    <%= f.radio_button :want_mac, 0 %>
+    <%= label_tag(:want_no, I18n.t('options._no') ) %>
+    <%= f.radio_button :want_mac, 2 %>
+    <%= label_tag(:want_dont_care, I18n.t('options.not_interested')) %>
+  </div>
+  <div class="actions">
+    <%= f.submit I18n.t 'submit' %>
+  </div>
+<% end %>
+
+<%= link_to 'en', new_survey_path+'?lang=en' %> | <%= link_to 'es', new_survey_path+'?lang=es' %> 
