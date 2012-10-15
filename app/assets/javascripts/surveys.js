@@ -1,18 +1,18 @@
 $(document).ready(function(){
-  $('#survey_use_turpial_true').click();
-  $('#os_field').show();
-  $('#why_not').hide();
+  var use_turpial = $('#survey_use_turpial')
+  use_turpial.val(1)
+  $('#os_field').show()
+  $('#why_not').hide()
 
-  $('#survey_use_turpial_false').live('click',function(){
-    console.log('hidding');
-    $('#os_field').hide();
-    $('#why_not').show();
-  });
-
-  $('#survey_use_turpial_true').live('click',function(){
-    console.log('showing');
-    $('#os_field').show();
-    $('#why_not').hide();
-  });
+  use_turpial.on('change',function(){
+    var use = parseInt(use_turpial.val())
+    if (use == 0) {
+      $('#os_field').hide()
+      $('#why_not').show()
+    } else {
+      $('#why_not').hide()
+      $('#os_field').show()
+    }
+  })
 
 });

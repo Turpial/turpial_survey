@@ -11,32 +11,26 @@
     </div>
   <% end %>
 
+  <h1><%= I18n.t 'survey_text' %></h1>
+
   <div class="field">
-    <%= f.label I18n.t 'questions.use_turpial' %><br />
-    <%= f.radio_button :use_turpial, true %>
-    <%= label_tag(:use_yes, I18n.t('options._yes')) %>
-    <%= f.radio_button :use_turpial, false %>
-    <%= label_tag(:use_no, I18n.t('options._no')) %>
+    <%= f.label 'use_turpial', I18n.t('questions.use_turpial') %>
+    <%= f.select(:use_turpial, options_for_select([[I18n.t('options._yes'), 1], [I18n.t('options._no'), 0]]), :class => 'input-mini') %>
   </div>
   <div class="field" id="why_not">
-    <%= f.label I18n.t 'questions.why_not' %><br />
-    <%= f.text_area :why_not %>
+    <%= f.label 'why_not', I18n.t('questions.why_not') %>
+    <%= f.text_field :why_not, :class => 'input-xxlarge' %>
   </div>
   <div class="field" id="os_field" >
-    <%= f.label I18n.t 'questions.operating_system' %><br />
-    <%= f.select(:operating_system, options_for_select([['Debian','debian'], ['Ubuntu','ubuntu'],['Fedora','fedora'], ['OpenSuse','opensuse'], ['Linux Mint','linux mint'], ['Arch','arch'], ['Other', 'other']])) %>
+    <%= f.label 'operating_system', I18n.t('questions.operating_system') %>
+    <%= f.select(:operating_system, options_for_select([['Debian','debian'], ['Ubuntu','ubuntu'],['Fedora','fedora'], ['OpenSuse','opensuse'], ['Linux Mint','linux mint'], ['Arch','arch'], [I18n.t('options.other'), 'other']])) %>
   </div>
   <div class="field">
-    <%= f.label I18n.t 'questions.want_mac' %><br />
-    <%= f.radio_button :want_mac, 1  %>
-    <%= label_tag(:want_yes, I18n.t('options._yes')) %>
-    <%= f.radio_button :want_mac, 0 %>
-    <%= label_tag(:want_no, I18n.t('options._no') ) %>
-    <%= f.radio_button :want_mac, 2 %>
-    <%= label_tag(:want_dont_care, I18n.t('options.not_interested')) %>
+    <%= f.label 'want_mac', I18n.t('questions.want_mac') %>
+    <%= f.select(:want_mac, options_for_select([[I18n.t('options._yes'), 1], [I18n.t('options._no'), 0], [I18n.t('options.not_interested'), 2]])) %>
   </div>
   <div class="actions">
-    <%= f.submit I18n.t 'submit' %>
+    <%= f.submit I18n.t 'submit', :class => 'btn btn-success' %>
   </div>
 <% end %>
 
