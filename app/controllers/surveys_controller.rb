@@ -1,5 +1,9 @@
 class SurveysController < ApplicationController
 
+  def index
+    redirect_to :new_survey
+  end
+
   def new
     @survey = Survey.new
 
@@ -12,7 +16,7 @@ class SurveysController < ApplicationController
     @survey = Survey.new(params[:survey])
 
     url= 'https://twitter.com/intent/tweet?original_referer=%s&source=tweetbutton&text=%s&url=%s&via=turpialVe' % [request.url, 'texto', request.url]
-    
+
     respond_to do |format|
       if @survey.save
         format.html { redirect_to url }

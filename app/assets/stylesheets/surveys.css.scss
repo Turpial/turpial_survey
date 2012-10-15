@@ -1,3 +1,59 @@
 // Place all the styles related to the Surveys controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #262626;
+}
+
+#wrapper {
+  width: 700px;
+  margin: 0 auto;
+}
+
+#logo {
+  background: no-repeat url('/assets/logo.png');
+  width: 425px;
+  height: 100px;
+}
+
+.shadow {
+  -moz-box-shadow: 0 3px 10px 3px #111;
+  -webkit-box-shadow: 0 3px 10px 3px #111;
+  box-shadow: 0 3px 10px 3px #111;
+  background-color: white;
+  -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+}
+
+#content {
+}
+
+h1 {
+  padding: 30px 0px;
+  margin-top: 0px;
+}
+
+form {
+  padding: 0 20px;
+}
+
+#menu {
+  background: url('/assets/menu-background.png') repeat-x #359130;
+  height: 45px;
+}
+
+#menu p {
+  margin-left: 14px;
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: bold;
+  text-shadow: 0 1px 1px black;
+  color: #eee;
+}
