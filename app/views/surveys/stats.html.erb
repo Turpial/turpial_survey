@@ -1,7 +1,12 @@
-<h2>People that </h2>
-<% @use_turpial.each do  |ut|%>
-  <h3><%=  (ut.use_turpial ? 'Use: ': 'Dont use: ').concat ut.total.to_s %></h3>
+<div id="head">
+  <h1><%= I18n.t('statistics') %></h1>
+</div>
+
+<div id="message">
+<% @use_turpial.each do |ut|%>
+  <p><%=  (ut.use_turpial ? 'Total people using Turpial: ': "Total people don't use Turpial: ").concat ut.total.to_s %></p>
 <% end %>
+</div>
 
 <script src="http://code.highcharts.com/highcharts.js"></script>
 <script src="http://code.highcharts.com/modules/exporting.js"></script>
@@ -17,7 +22,7 @@ $(document).ready(function() {
           plotShadow: false
       },
       title: {
-          text: 'Operating systems'
+          text: 'By operating systems'
       },
       tooltip: {
           pointFormat: '{series.name}: <b>{point.percentage}%</b>',
@@ -32,7 +37,7 @@ $(document).ready(function() {
                   color: '#000000',
                   connectorColor: '#000000',
                   formatter: function() {
-                      return '<b>'+ this.point.name +'</b>: '+ this.percentage +' %';
+                      return '<b>'+ this.point.name +'</b>: '+ Math.round(this.percentage) +' %';
                   }
               }
           }
@@ -67,7 +72,7 @@ $(document).ready(function() {
                   color: '#000000',
                   connectorColor: '#000000',
                   formatter: function() {
-                      return '<b>'+ this.point.name +'</b>: '+ this.percentage +' %';
+                      return '<b>'+ this.point.name +'</b>: '+ Math.round(this.percentage) +' %';
                   }
               }
           }
