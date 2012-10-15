@@ -20,7 +20,7 @@ class SurveysController < ApplicationController
       if @survey.save
         format.html
       else
-        format.html { render action: "new" }
+        format.html { render :action => "new" }
       end
     end
   end
