@@ -2,4 +2,13 @@
   <h1><%= I18n.t 'survey.thanks' %></h1>
 </div>
 
-<%= link_to 'New Survey', new_survey_path %>
+<div id="message">
+    <br />
+    <p><%= I18n.t('survey.invitation') %></p>
+    <p><%= I18n.t('survey.make_a_tweet') %></p>
+    <br />
+    <div id="tweet-button-container">
+        <a href="<%= @tweet_url %>" class="btn btn-large btn-success tweet-button"><%= I18n.t('spread_love') %></a>
+    </div>
+    <br />
+</div>

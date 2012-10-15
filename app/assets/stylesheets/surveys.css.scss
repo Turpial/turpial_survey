@@ -12,8 +12,12 @@ body {
 }
 
 #wrapper {
+  position: relative;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
   width: 700px;
-  margin: 0 auto;
+  margin: 0 auto -170px;
 }
 
 #logo {
@@ -68,8 +72,36 @@ label {
   font-weight: bold;
 }
 
+#message {
+  padding: 30px 20px;
+  margin-top: 0px;
+}
+
+#message p {
+  font-size: 18px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#message a {
+  color: #fff;
+  font-weight: bold;
+}
+
+#tweet-button-container {
+  width: 190px;
+  margin: 0 auto;
+}
+
+.tweet-button {
+  width: 160px;
+}
+
 #footer {
-  height: 170px;
   width: 100%;
   background: url('/assets/footer-background.png') center repeat-x #262626;
+}
+
+#footer, .push {
+  height: 170px;
 }

@@ -6,8 +6,10 @@ es:
     title: "La Encuesta de Turpial"
     text: "Queremos saber si estás con nosotros en el plan de dominación mundial"
     thanks: "¡Gracias por ayudarnos!"
-    invitation: ""
-  tweet_text: "Bla"
+    invitation: "¿Te gustaría esparcir un poco de amor por nuestro pajarito?"
+    make_a_tweet: "¡Haz un tweet!"
+  spread_love: "Esparcir amor"
+  tweet_text: "Yo formo parte del plan de #Turpial para conquistar el mundo ¿Y tu? http://turpial.org.ve/world-domination"
   submit: 'Enviar'
   questions:
     use_turpial: "¿Usas Turpial?"
@@ -19,6 +21,3 @@ es:
     _no: "No"
     not_interested: "No me interesa"
     other: "Otro"
-  recaptcha:
-    errors:
-      verification_failed: 'La verificación ha fallado'

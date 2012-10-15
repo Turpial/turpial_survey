@@ -6,8 +6,10 @@ en:
     title: "The Turpial Survey"
     text: "We want to know if you are involved in our world domination plan"
     thanks: "Thanks for helping us!"
-    invitation: "alsdlñaskdñl"
-  tweet_text: "Blah"
+    invitation: "Would you like to spread some turpial love?"
+    make_a_tweet: "Tweet about it!"
+  spread_love: "Spread love"
+  tweet_text: "I'm on the plan of #Turpial to rule the world! Are you in? http://turpial.org.ve/world-domination"
   submit: 'Send'
   questions:
     use_turpial: "Do you use Turpial?"
@@ -19,6 +21,3 @@ en:
     _no: "No"
     not_interested: "I don't care"
     other: "Other"
-  recaptcha:
-    errors:
-      verification_failed: 'Verification failed'
