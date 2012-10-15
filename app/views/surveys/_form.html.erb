@@ -1,7 +1,7 @@
 <%= form_for(@survey) do |f| %>
   <% if @survey.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
+      <h2>Error:</h2>
 
       <ul>
       <% @survey.errors.full_messages.each do |msg| %>
@@ -28,6 +28,9 @@
   <div class="field">
     <%= f.label 'want_mac', I18n.t('questions.want_mac') %>
     <%= f.select(:want_mac, options_for_select([[I18n.t('options._yes'), 1], [I18n.t('options._no'), 0], [I18n.t('options.not_interested'), 2]])) %>
+  </div>
+  <div class="field">
+    <%= recaptcha_tags %>
   </div>
   <div class="actions">
     <%= f.submit I18n.t('submit'), :class => 'btn btn-success' %>

@@ -19,3 +19,6 @@ en:
     _no: "No"
     not_interested: "I don't care"
     other: "Other"
+  recaptcha:
+    errors:
+      verification_failed: 'Verification failed'
