@@ -18,7 +18,7 @@ class SurveysController < ApplicationController
     url= 'https://twitter.com/intent/tweet?original_referer=%s&source=tweetbutton&text=%s&url=%s&via=turpialVe' % [request.url, 'texto', request.url]
 
     respond_to do |format|
-      if @survey.save
+      if verify_recaptcha(:model => @survey, :message => I18n.t('recaptcha.errors.verification_failed')) && @survey.save
         format.html
       else
         format.html { render action: "new" }
