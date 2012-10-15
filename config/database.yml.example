@@ -1,0 +1,6 @@
+development:
+  adapter: mysql2
+  database: turpial_survey
+  username: 
+  password: 
+  host: localhost

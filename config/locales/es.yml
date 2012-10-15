@@ -2,14 +2,17 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 es:
-  survey_title: "La encuesta de turpial"
+  survey_title: "La Encuesta de Turpial"
+  survey_text: "askdlñak lñaskd ñlaksdlñka slñdk"
+  tweet_text: "Bla"
   submit: 'Enviar'
   questions:
-    use_turpial: "Usas Turpial?"
-    why_not: "Por qué no usas Turpial?"
-    operating_system: "Sistema Operativo?"
-    want_mac: "Quieres usar Turpial en mac?"
+    use_turpial: "¿Usas Turpial?"
+    why_not: "¿Por qué no usas Turpial?"
+    operating_system: "¿Sistema Operativo?"
+    want_mac: "¿Te gustaría Turpial para mac?"
   options:
     _yes: "Sí"
     _no: "No"
     not_interested: "No me interesa"
+    other: "Otro"

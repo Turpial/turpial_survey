@@ -3,13 +3,16 @@
 
 en:
   survey_title: "The Turpial Survey"
+  survey_text: "askdlñak lñaskd ñlaksdlñka slñdk ajdjakd"
+  tweet_text: "Blah"
   submit: 'Send'
   questions:
     use_turpial: "Do you use Turpial?"
     why_not: "Why don't you use Turpial?"
     operating_system: "Your operating system?"
-    want_mac: "Do you want Turpial for mac?"
+    want_mac: "Would you like Turpial for mac?"
   options:
     _yes: "Yes"
     _no: "No"
     not_interested: "I don't care"
+    other: "Other"
