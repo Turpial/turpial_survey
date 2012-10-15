@@ -17,3 +17,4 @@
 *.swp
 .rvmrc
 database.yml
+captchakeys.yml
