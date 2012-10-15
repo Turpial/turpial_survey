@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <h1><%= I18n.t 'survey_text' %></h1>
+  <%= hidden_field_tag :lang, @lang %>
 
   <div class="field">
     <%= f.label 'use_turpial', I18n.t('questions.use_turpial') %>
@@ -30,8 +30,7 @@
     <%= f.select(:want_mac, options_for_select([[I18n.t('options._yes'), 1], [I18n.t('options._no'), 0], [I18n.t('options.not_interested'), 2]])) %>
   </div>
   <div class="actions">
-    <%= f.submit I18n.t 'submit', :class => 'btn btn-success' %>
+    <%= f.submit I18n.t('submit'), :class => 'btn btn-info' %>
   </div>
 <% end %>
-
-<%= link_to 'en', new_survey_path+'?lang=en' %> | <%= link_to 'es', new_survey_path+'?lang=es' %> 
+<br/>

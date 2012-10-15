@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= I18n.t 'survey_title' %></title>
+  <title><%= I18n.t 'survey.title' %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <div id="wrapper">
-    <%= yield %>
+    <!-- Logo and language buttons -->
+    <div id="logo">
+      <div id="language-buttons">
+        <a id="en-icon" class="lang-icon" href="<%= new_survey_path + '?lang=en' %>">
+          <img src="/assets/en_lang.png" alt="View in english" title="View in english"/>
+        </a>
+
+        <a id="es-icon" class="lang-icon" href="<%= new_survey_path + '?lang=es' %>">
+          <img src="/assets/es_lang.png" alt="Ver en español" title="Ver en español"/>
+        </a>
+      </div>
+    </div>
+
+    <!-- Shadow and content -->
+    <div class="shadow">
+      <div id="content">
+        <%= yield %>
+      </div>
+    </div>
   </div>
+
+  <!-- Footer -->
+  <div id="footer"></div>
 </body>
 </html>
