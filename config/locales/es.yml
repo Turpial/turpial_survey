@@ -2,8 +2,11 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 es:
-  survey_title: "La Encuesta de Turpial"
-  survey_text: "askdlñak lñaskd ñlaksdlñka slñdk"
+  survey:
+    title: "La Encuesta de Turpial"
+    text: "Queremos saber si estás con nosotros en el plan de dominación mundial"
+    thanks: "¡Gracias por ayudarnos!"
+    invitation: ""
   tweet_text: "Bla"
   submit: 'Enviar'
   questions:
