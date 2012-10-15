@@ -6,20 +6,20 @@ class SurveysController < ApplicationController
 
   def new
     @survey = Survey.new
+    @lang = params['lang'] || 'es'
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
     end
   end
 
   def create
     @survey = Survey.new(params[:survey])
-
     url= 'https://twitter.com/intent/tweet?original_referer=%s&source=tweetbutton&text=%s&url=%s&via=turpialVe' % [request.url, 'texto', request.url]
 
     respond_to do |format|
       if @survey.save
-        format.html { redirect_to url }
+        format.html
       else
         format.html { render action: "new" }
       end
