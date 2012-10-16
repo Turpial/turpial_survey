@@ -45,7 +45,7 @@ $(document).ready(function() {
       series: [{
           type: 'pie',
           name: 'Operating system share',
-          data: <%= raw @operating_systems.collect { |os| [os.operating_system.capitalize, os.total] } %>
+          data: <%= raw @operating_systems %>
       }]
   });
 
@@ -80,7 +80,7 @@ $(document).ready(function() {
       series: [{
           type: 'pie',
           name: 'Turpial in mac',
-          data: <%= raw @want_mac.collect { |wm| [(wm.want_mac == 0 ? 'No' : wm.want_mac == 1 ? 'Yes' : 'Dont care'), wm.total] } %>
+          data: <%= raw @want_mac %>
       }]
   });
 });
