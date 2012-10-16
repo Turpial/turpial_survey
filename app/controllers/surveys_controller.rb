@@ -17,7 +17,8 @@ class SurveysController < ApplicationController
     @survey = Survey.new(params[:survey])
     @tweet_url = "https://twitter.com/intent/tweet?original_referer=#{@url}&source=tweetbutton&text=#{CGI.escape(I18n.t('tweet_text'))}&url=#{@url}&via=turpialVe"
     respond_to do |format|
-      if verify_recaptcha(:model => @survey, :message => I18n.t('recaptcha.errors.verification_failed')) && @survey.save
+      #if verify_recaptcha(:model => @survey, :message => I18n.t('recaptcha.errors.verification_failed')) && @survey.save
+      if @survey.save
         format.html
       else
         format.html { render :action => "new" }

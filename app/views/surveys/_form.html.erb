@@ -30,7 +30,7 @@
     <%= f.select(:want_mac, options_for_select([[I18n.t('options._yes'), 1], [I18n.t('options._no'), 0], [I18n.t('options.not_interested'), 2]])) %>
   </div>
   <div class="field">
-    <%= recaptcha_tags %>
+    <%# recaptcha_tags %>
   </div>
   <div class="actions">
     <%= f.submit I18n.t('submit'), :class => 'btn btn-success' %>
