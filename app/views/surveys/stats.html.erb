@@ -83,9 +83,56 @@ $(document).ready(function() {
           data: <%= raw @want_mac %>
       }]
   });
+
+  chart_trend = new Highcharts.Chart({
+      chart: {
+          renderTo: 'trend',
+          type: 'column',
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false
+      },
+      title: {
+          text: 'About survey trend'
+      },
+      tooltip: {
+        formatter: function() {
+          return 'Users: <b>' + this.point.y + '</b>';
+        }
+      },
+      xAxis: {
+        categories: <%= raw @trend[:dates] %>,
+        title: {
+          text: 'Days'
+        }
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: 'Users'
+        }
+      },
+      plotOptions: {
+          bar: {
+              allowPointSelect: true,
+              cursor: 'pointer',
+              dataLabels: {
+                  enabled: true,
+                  color: '#000000',
+                  connectorColor: '#000000',
+              }
+          }
+      },
+      series: [{
+          name: 'Users Trend',
+          data: <%= raw @trend[:users] %>
+      }]
+  });
+
 });
 
 </script>
 
 <div id='operating_systems' style="min-width: 400px; height: 400px; margin: 0 auto"></div>
 <div id='want_mac' style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+<div id='trend' style="min-width: 400px; height: 400px; margin: 0 auto"></div>
